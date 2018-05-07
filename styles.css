@@ -1,0 +1,77 @@
+header{
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+h1{
+    text-align: center;
+    font-size: 2em;
+}
+.logo{
+    height:30px;
+    width: 30px;
+}
+
+.tagline{
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.first-input{
+    display: inline-block;
+}
+
+.second-input{
+    display: inline-block;
+}
+
+input{
+    border-radius: 10px;
+}
+
+button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+#api-data{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.meetup-data{
+    height: 500px;
+    width: 49%;
+    display:inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    float: left;
+    border-radius: 10px;
+}
+
+.maps-data{
+    height: 500px;
+    width: 49%;
+    display:inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    float: right;
+    border-radius: 10px;
+}
+
+@media only screen and (max-device-width : 960px) and (min-device-width : 320px){
+.meetup-data, .maps-data {
+    width: 100%;
+    }
+}

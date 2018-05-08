@@ -1,20 +1,24 @@
 header{
-    height: 60px;
+    height: 100px;
     width: 100%;
-    border-bottom: 1px solid black;
 }
 
 h1{
     text-align: center;
-    font-size: 2em;
+    font-size: 50px;
+    /* font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Shadows Into Light', cursive; */
+    font-family: 'Rock Salt', cursive;
+    margin-top: 0;
 }
 .logo{
-    height:30px;
-    width: 30px;
+    height: 70px;
+    width: 80px;
 }
 
 .tagline{
     text-align: center;
+    font-family: 'The Girl Next Door', cursive;
 }
 
 form {
@@ -30,8 +34,15 @@ form {
     display: inline-block;
 }
 
+label{
+    font-family: 'The Girl Next Door', cursive;
+    font-weight: bolder;
+}
+
 input{
     border-radius: 10px;
+    font-size: 15px;
+    border: 1px solid red
 }
 
 button{
@@ -41,6 +52,8 @@ button{
     margin-top: 20px;
     font-size: 15px;
     border-radius: 10px;
+    font-family: 'Rock Salt', cursive;
+    border: 1.5px solid red;
 }
 
 #api-data{
@@ -59,7 +72,7 @@ button{
     border-radius: 10px;
 }
 
-.maps-data{
+#map{
     height: 500px;
     width: 49%;
     display:inline-block;
@@ -74,4 +87,8 @@ button{
 .meetup-data, .maps-data {
     width: 100%;
     }
+
+h1, h2 {
+    width: 100%;
+}
 }

@@ -12,13 +12,16 @@ h1{
     margin-top: 0;
 }
 .logo{
-    height: 70px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
+    /* border: 1px solid red;
+    border-radius: 50%; */
 }
 
 .tagline{
     text-align: center;
     font-family: 'The Girl Next Door', cursive;
+    margin-top: 40px;
 }
 
 form {
@@ -37,6 +40,7 @@ form {
 label{
     font-family: 'The Girl Next Door', cursive;
     font-weight: bolder;
+    font-size: 18px;
 }
 
 input{
@@ -53,7 +57,7 @@ button{
     font-size: 15px;
     border-radius: 10px;
     font-family: 'Rock Salt', cursive;
-    border: 1.5px solid red;
+    border: 1px solid red;
 }
 
 #api-data{

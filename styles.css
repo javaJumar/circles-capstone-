@@ -1,3 +1,14 @@
+body {
+        background: linear-gradient(rgba(185, 185, 185, 0.5), rgba(190, 190, 190, 0.5) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
 header{
     height: 100px;
     width: 100%;
@@ -20,13 +31,13 @@ h1{
 
 .tagline{
     text-align: center;
-    font-family: 'The Girl Next Door', cursive;
-    margin-top: 40px;
+    font-family: 'Gaegu', cursive;
+    margin-top: 80px;
 }
 
 form {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .first-input{
@@ -38,7 +49,7 @@ form {
 }
 
 label{
-    font-family: 'The Girl Next Door', cursive;
+    font-family: 'Gaegu', cursive;
     font-weight: bolder;
     font-size: 18px;
 }
@@ -53,8 +64,9 @@ button{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 15px;
+    font-weight: bolder;
     border-radius: 10px;
     font-family: 'Rock Salt', cursive;
     border: 1px solid red;
@@ -65,22 +77,40 @@ button{
     width: 100%;
 }
 
-.meetup-data{
+.event-container{
+    margin: 10px:
+}
+
+.event-heading{
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.event-pic{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    float: left;
+    padding: 5px;
+}
+
+#events{
     height: 500px;
     width: 49%;
     display:inline-block;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
     border: 1px solid black;
     float: left;
     border-radius: 10px;
+    overflow: auto;
 }
 
 #map{
     height: 500px;
     width: 49%;
     display:inline-block;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
     border: 1px solid black;
     float: right;

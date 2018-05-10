@@ -4,7 +4,7 @@ const eventbriteUrl = 'https://www.eventbriteapi.com/v3';
 //get the list of events 
 function getEvents(interest, zipCode) {
     const endpoint =
-        `${eventbriteUrl}/events/search/?q=${interest}&location.address=${zipCode}&location.within=50mi`;
+        `${eventbriteUrl}/events/search/?q=${interest}&location.address=${zipCode}&location.within=80mi`;
     const options = {
         url: endpoint,
         headers: {
@@ -13,17 +13,28 @@ function getEvents(interest, zipCode) {
     }
     $.get(options).done(response => {
         console.log(response);
-        response.events.map(event => {
-            return getVenue(event.venue_id)
-        })
+        for (let i = 0; i < 15; i++) {
+            const startTime = new Date(response.events[i].start.local);
+            const endTime = new Date(response.events[i].end.local);
+            const content =
+                `<div class='event-container'>
+            <img class='event-pic' src='${response.events[i].logo.original.url}' alt='event photo'><p class ='event-heading'>${response.events[i].name.text}:</p> 
+            ${startTime.getHours()}:${startTime.getTime()} to ${endTime.getDate()};
+            ${response.events[i].description.text}
+            </div>`;
+            $('#events').append(content);
+        }
+        // response.events.map(event => {
+        //     return getVenue(event.venue_id)
+        // })
     }).fail(error => {
         console.log(error)
     })
 }
 
-function getVenue(ID) {
+function getVenue(id) {
     const venueEndpoint =
-        `${eventbriteUrl}/venues/${ID}/`;
+        `${eventbriteUrl}/venues/${id}/`;
     const venueOptions = {
         url: venueEndpoint,
         headers: {
@@ -37,6 +48,18 @@ function getVenue(ID) {
     })
 }
 
+function getAddressCoords(address, coords) {
+    let geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+        address: address,
+    }, coords);
+    let coordinates = coords[0].geometry.location;
+    let marker = new google.maps.Marker({
+        map: coords,
+        position: coordinates
+    });
+}
+
 
 function initMap() {
     //this is the Map options
@@ -46,8 +69,12 @@ function initMap() {
         gestureHandling: 'greedy',
         mapTypeId: google.maps.MapTypeId.TERRAIN
     }
-    //this is to process the Map image on the browser
+    //renders Map on the browser
     var map = new google.maps.Map(document.getElementById('map'), settings);
+    let geocoder = new google.maps.Geocoder();
+    document.getElementById('submit').addEventListener('click', function () {
+        getAddressCoords(geocoder, map);
+    });
 
     //this is to set the marker on the Map itself
     var marker = new google.maps.Marker({

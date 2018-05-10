@@ -8,17 +8,17 @@
     <title>Find Events</title>
     <link rel="stylesheet" href="./styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Rock+Salt|Shadows+Into+Light" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Rock+Salt|Shadows+Into+Light|The+Girl+Next+Door" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu|Roboto+Condensed" rel="stylesheet">
 </head>
 
 <body>
     <header role='banner'>
         <h1 class='title'>
-            <img class='logo' src='https://png.icons8.com/windows/1600/adventure.png' alt='couples gif'> Experiences
+            <img class='logo' src='https://png.icons8.com/windows/1600/adventure.png' alt='couples gif'> Out & About
             <h1>
     </header>
     <main role='main'>
-        <h2 class='tagline'>"Find cool nearby things to do, and enrich life."</h2>
+        <h2 class='tagline'>"Find cool nearby things to do, & foster some relationships!"</h2>
         <form for='query' class='search-inputs'>
             <div class='first-input'>
                 <label for="query">What interests you?</label>
@@ -28,10 +28,10 @@
                 <label for="query">What's your Zip-Code?</label>
                 <input id='zipCode' type="text" class="zip-input" placeholder='  e.g. 90291' required>
             </div>
-            <button class="submit-button" type="submit">Search!</button>
+            <button id='submit' class="submit-button" type="submit">Search!</button>
         </form>
         <div id='api-data'>
-            <section class='meetup-data'>
+            <section id='events'>
             </section>
             <section id='map'>
             </section>

@@ -14,13 +14,14 @@ function getEvents(interest, zipCode) {
     $.get(options).done(response => {
         console.log(response);
         for (let i = 0; i < 15; i++) {
-            const startTime = new Date(response.events[i].start.local);
-            const endTime = new Date(response.events[i].end.local);
-            const content =
-                `<div class='event-container'>
+            const startTime = response.events[i].start.local;
+            const endTime = response.events[i].end.local;
+            const newStartTime = moment(startTime).format('LLLL');
+            const newEndTime = moment(endTime).format('LLLL');
+            const content = `<div class='event-container'>
             <img class='event-pic' src='${response.events[i].logo.original.url}' alt='event photo'><p class ='event-heading'>${response.events[i].name.text}:</p> 
-            ${startTime.getHours()}:${startTime.getTime()} to ${endTime.getDate()};
-            ${response.events[i].description.text}
+            <p class='times'>${newStartTime} -- ${newEndTime}</p>
+            <p>${response.events[i].description.text}</p>
             </div>`;
             $('#events').append(content);
         }
@@ -80,8 +81,7 @@ function initMap() {
     var marker = new google.maps.Marker({
         position: { lat: 33.745571, lng: -117.867836 },
         //which Map do we want to add it to? 
-        map: map,
-        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        map: map
     });
 }
 //calling Init 
@@ -95,6 +95,8 @@ function onSubmit() {
         console.log(event);
         const interest = $('#interest').val();
         const zipCode = $('#zipCode').val();
+        $('form').find('#interest').val("");
+        $('form').find('#zipCode').val("");
         getEvents(interest, zipCode);
     })
 }

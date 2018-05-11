@@ -18,29 +18,30 @@
             <h1>
     </header>
     <main role='main'>
-        <h2 class='tagline'>"Find cool nearby things to do, & foster some relationships!"</h2>
+        <h2 class='tagline'>"Find cool nearby things to do."</h2>
         <form for='query' class='search-inputs'>
             <div class='first-input'>
                 <label for="query">What interests you?</label>
-                <input id='interest' type="text" class="interest-input" placeholder='  e.g. Surfing' required>
+                <input id='interest' type="text" class="interest-input" placeholder='  e.g. Music' required>
             </div>
             <div class='second-input'>
                 <label for="query">What's your Zip-Code?</label>
-                <input id='zipCode' type="text" class="zip-input" placeholder='  e.g. 90291' required>
+                <input id='zipCode' type="text" class="zip-input" placeholder='' required>
             </div>
             <button id='submit' class="submit-button" type="submit">Search!</button>
         </form>
-        <div id='api-data'>
-            <section id='events'>
-            </section>
-            <section id='map'>
-            </section>
+        <div id='api-data'></div>
+        <section id='events' aria-live="assertive" hidden>
+        </section>
+        <section id='map' aria-live="assertive" hidden>
+        </section>
         </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChRNikEvhMwmi0fLhnqwz2Wyh9EEBhjdw&callback=initMap">
     </script>
     <script type="text/javascript" src="./maps.js"></script>
+    <script src="./moment.js"></script>
 </body>
 
 </html>

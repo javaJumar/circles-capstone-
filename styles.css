@@ -1,38 +1,43 @@
 body {
-        background: linear-gradient(rgba(185, 185, 185, 0.5), rgba(190, 190, 190, 0.5) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
+        background: linear-gradient(rgba(185, 185, 185, 0.3), rgba(190, 190, 190, 0.3) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
         background-position: center center;
         background-attachment: fixed;
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
-        background-size: cover;
+        background-size: cover; 
     }
 
 header{
     height: 100px;
     width: 100%;
+    padding: 20px;
 }
 
 h1{
     text-align: center;
     font-size: 50px;
-    /* font-family: 'Roboto Condensed', sans-serif;
-    font-family: 'Shadows Into Light', cursive; */
     font-family: 'Rock Salt', cursive;
     margin-top: 0;
+    text-decoration: underline;
 }
 .logo{
     height: 100px;
     width: 100px;
-    /* border: 1px solid red;
-    border-radius: 50%; */
 }
 
 .tagline{
     text-align: center;
     font-family: 'Gaegu', cursive;
-    margin-top: 80px;
+    margin-top: 60px;
+    font-size: 30px;
+}
+.tagline2{
+    text-align: center;
+    font-family: 'Gaegu', cursive;
+    font-size: 30px;
+    margin-top: -40px;
 }
 
 form {
@@ -51,13 +56,18 @@ form {
 label{
     font-family: 'Gaegu', cursive;
     font-weight: bolder;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 input{
     border-radius: 10px;
     font-size: 15px;
-    border: 1px solid red
+    border: 1px solid black;
+    padding-left: 5px;
+}
+
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
 button{
@@ -69,7 +79,7 @@ button{
     font-weight: bolder;
     border-radius: 10px;
     font-family: 'Rock Salt', cursive;
-    border: 1px solid red;
+    border: 1px solid black;
 }
 
 #api-data{
@@ -94,35 +104,45 @@ button{
     padding: 5px;
 }
 
+.times{
+    font-weight: 600;
+    font-style: italic;
+}
+
 #events{
     height: 500px;
     width: 49%;
     display:inline-block;
-    margin-top: 40px;
+    margin-top: 100px;
     margin-bottom: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     float: left;
     border-radius: 10px;
     overflow: auto;
+    background-color: white;
+    color:black;
 }
 
 #map{
     height: 500px;
     width: 49%;
     display:inline-block;
-    margin-top: 40px;
+    margin-top: 100px;
     margin-bottom: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     float: right;
     border-radius: 10px;
 }
 
 @media only screen and (max-device-width : 960px) and (min-device-width : 320px){
+
+    header{
+        width: 100%;
+    }
 .meetup-data, .maps-data {
     width: 100%;
     }
-
 h1, h2 {
     width: 100%;
-}
+    }   
 }

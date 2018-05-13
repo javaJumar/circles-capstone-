@@ -1,5 +1,5 @@
 body {
-        background: linear-gradient(rgba(185, 185, 185, 0.3), rgba(190, 190, 190, 0.3) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
+        background: linear-gradient(rgba(100, 100, 100, 0.35), rgba(131, 131, 131, 0.35) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
         background-position: center center;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -20,7 +20,6 @@ h1{
     font-size: 50px;
     font-family: 'Rock Salt', cursive;
     margin-top: 0;
-    text-decoration: underline;
 }
 .logo{
     height: 100px;
@@ -29,9 +28,9 @@ h1{
 
 .tagline{
     text-align: center;
-    font-family: 'Gaegu', cursive;
-    margin-top: 60px;
-    font-size: 30px;
+    font-family: 'Rock Salt', cursive;
+    margin-top: 65px;
+    font-size: 20px;
 }
 .tagline2{
     text-align: center;
@@ -56,13 +55,13 @@ form {
 label{
     font-family: 'Gaegu', cursive;
     font-weight: bolder;
-    font-size: 22px;
+    font-size: 28px;
 }
 
 input{
     border-radius: 10px;
     font-size: 15px;
-    border: 1px solid black;
+    border: 3px solid black;
     padding-left: 5px;
 }
 
@@ -75,11 +74,11 @@ button{
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: bolder;
-    border-radius: 10px;
+    border-radius: 50%;
     font-family: 'Rock Salt', cursive;
-    border: 1px solid black;
+    border: 3px solid black;
 }
 
 #api-data{
@@ -94,6 +93,19 @@ button{
 .event-heading{
     font-weight: bolder;
     text-transform: uppercase;
+    font-family: 'Gaegu', cursive;
+    font-size: 20px;
+}
+
+.event-description{
+    padding: 10px; 
+    font-family: 'Gaegu', cursive;
+    font-size: 20px;
+    font-style: bold;
+}
+
+.event-link{
+    font-family: 'Rock Salt', cursive;
 }
 
 .event-pic{
@@ -107,6 +119,14 @@ button{
 .times{
     font-weight: 600;
     font-style: italic;
+    font-family: 'Gaegu', cursive;
+    font-size: 20px;
+}
+
+.no-event{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Rock Salt', cursive;
 }
 
 #events{
@@ -115,12 +135,19 @@ button{
     display:inline-block;
     margin-top: 100px;
     margin-bottom: 20px;
-    /* border: 1px solid black; */
+    border: 3px solid black;
     float: left;
     border-radius: 10px;
     overflow: auto;
-    background-color: white;
     color:black;
+    background: linear-gradient(rgba(248, 248, 248, 0.75), rgba(253, 253, 253, 0.75) ), url(https://i.pinimg.com/originals/a3/85/b4/a385b40167fc24d3cafcc334fc871b47.jpg);
+    background-position: center center;
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
 }
 
 #map{
@@ -129,9 +156,13 @@ button{
     display:inline-block;
     margin-top: 100px;
     margin-bottom: 20px;
-    /* border: 1px solid black; */
+    border: 3px solid black;
     float: right;
     border-radius: 10px;
+}
+
+.hidden-element#events,.hidden-element#map{
+    display: none; 
 }
 
 @media only screen and (max-device-width : 960px) and (min-device-width : 320px){

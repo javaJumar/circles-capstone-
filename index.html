@@ -14,15 +14,15 @@
 <body>
     <header role='banner'>
         <h1 class='title'>
-            <img class='logo' src='https://png.icons8.com/windows/1600/adventure.png' alt='couples gif'> Out & About
+            <img class='logo' src='https://png.icons8.com/windows/1600/adventure.png' alt='map diagram'> Out & About
             <h1>
     </header>
     <main role='main'>
         <h2 class='tagline'>"Find cool nearby things to do."</h2>
         <form for='query' class='search-inputs'>
             <div class='first-input'>
-                <label for="query">What interests you?</label>
-                <input id='interest' type="text" class="interest-input" placeholder='  e.g. Music' required>
+                <label for="query">What events interests you?</label>
+                <input id='interest' type="text" class="interest-input" placeholder='  Pick anything!' required>
             </div>
             <div class='second-input'>
                 <label for="query">What's your Zip-Code?</label>
@@ -31,9 +31,9 @@
             <button id='submit' class="submit-button" type="submit">Search!</button>
         </form>
         <div id='api-data'></div>
-        <section id='events' aria-live="assertive" hidden>
+        <section id='events' class='hidden-element' aria-live="assertive" hidden>
         </section>
-        <section id='map' aria-live="assertive" hidden>
+        <section id='map' class='hidden-element' aria-live="assertive" hidden>
         </section>
         </div>
     </main>

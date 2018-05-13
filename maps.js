@@ -1,52 +1,58 @@
 const eventbriteKey = '4CMGDQLH3H24Q4O62ZR7';
 const eventbriteUrl = 'https://www.eventbriteapi.com/v3';
+let map;
 
-//get the list of events 
+//get the list of events from Eventbrite API endpoint
 function getEvents(interest, zipCode) {
     const endpoint =
-        `${eventbriteUrl}/events/search/?q=${interest}&location.address=${zipCode}&location.within=80mi`;
+        `${eventbriteUrl}/events/search/?q=${interest}&location.address=${zipCode}&location.within=5mi&expand=organizer,venue`;
     const options = {
         url: endpoint,
         headers: {
             'Authorization': `Bearer ${eventbriteKey}`
         }
     }
+    // this gets the data from Eventbrite's endpoint
     $.get(options).done(response => {
         console.log(response);
-        for (let i = 0; i < 15; i++) {
-            const startTime = response.events[i].start.local;
-            const endTime = response.events[i].end.local;
-            const newStartTime = moment(startTime).format('LLLL');
-            const newEndTime = moment(endTime).format('LLLL');
-            const content = `<div class='event-container'>
-            <img class='event-pic' src='${response.events[i].logo.original.url}' alt='event photo'><p class ='event-heading'>${response.events[i].name.text}:</p> 
-            <p class='times'>${newStartTime} -- ${newEndTime}</p>
-            <p>${response.events[i].description.text}</p>
-            </div>`;
-            $('#events').append(content);
-        }
-        // response.events.map(event => {
-        //     return getVenue(event.venue_id)
-        // })
+        const events = response.events;
+        const eventTemplate = (events.length) ? events.map(event =>
+            createEventTemplate(event)) : `<p class='no-event'>Sorry, no results within your area!</p>`;
+        const newLat = response.location.latitude;
+        const newLng = response.location.longitude;
+        centerMap(+newLat, +newLng);
+        $('#events').html(eventTemplate);
+        events.map(event =>
+            createMarker(+event.venue.latitude, +event.venue.longitude))
     }).fail(error => {
         console.log(error)
     })
 }
 
-function getVenue(id) {
-    const venueEndpoint =
-        `${eventbriteUrl}/venues/${id}/`;
-    const venueOptions = {
-        url: venueEndpoint,
-        headers: {
-            'Authorization': `Bearer ${eventbriteKey}`
-        }
-    }
-    $.get(venueOptions).done(response => {
-        console.log(response);
-    }).fail(error => {
-        console.error(error);
-    })
+//this creates the event information in the left container
+function createEventTemplate(event) {
+    console.log(event);
+    const startTime = event.start.local;
+    const endTime = event.end.local;
+    const newStartTime = moment(startTime).format('LLLL');
+    const newEndTime = moment(endTime).format('LLLL');
+    const eventLink = event.url;
+    const logoUrl = event.logo ? event.logo.original.url : '';
+    const logo = event.logo ? `<img class='event-pic' src='${logoUrl}' alt='event photo'>` : '';
+    const content = `<div class='event-container'>
+            ${logo}
+            <p class ='event-heading'>${event.name.text}:</p> 
+            <p class='times'>${newStartTime} to ${newEndTime}</p>
+            <p class='event-description'>${event.description.text}:
+            <a class='event-link' href='${eventLink}?token=4CMGDQLH3H24Q4O62ZR7'>Event Link!</a></p>
+            </div>`;
+    return content;
+}
+
+function createMarker(lat, lng) {
+    var marker = new google.maps.Marker({
+        position: { lat, lng }, map
+    });
 }
 
 function getAddressCoords(address, coords) {
@@ -61,20 +67,29 @@ function getAddressCoords(address, coords) {
     });
 }
 
+function centerMap(newLat, newLng) {
+    var settings = {
+        zoom: 11,
+        center: { lat: newLat, lng: newLng },
+        gestureHandling: 'greedy',
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    }
+    map = new google.maps.Map(document.getElementById('map'), settings);
+}
 
 function initMap() {
     //this is the Map options
     var settings = {
-        zoom: 11,
-        center: { lat: 33.745571, lng: -117.867836 },
+        zoom: 10,
+        center: { lat: 34.052235, lng: -118.243683 },
         gestureHandling: 'greedy',
         mapTypeId: google.maps.MapTypeId.TERRAIN
     }
     //renders Map on the browser
-    var map = new google.maps.Map(document.getElementById('map'), settings);
+    map = new google.maps.Map(document.getElementById('map'), settings);
     let geocoder = new google.maps.Geocoder();
     document.getElementById('submit').addEventListener('click', function () {
-        getAddressCoords(geocoder, map);
+        // getAddressCoords(geocoder, map);
     });
 
     //this is to set the marker on the Map itself
@@ -84,7 +99,7 @@ function initMap() {
         map: map
     });
 }
-//calling Init 
+// //calling Init 
 function main() {
     onSubmit();
 }
@@ -97,6 +112,7 @@ function onSubmit() {
         const zipCode = $('#zipCode').val();
         $('form').find('#interest').val("");
         $('form').find('#zipCode').val("");
+        $('.hidden-element').show();
         getEvents(interest, zipCode);
     })
 }

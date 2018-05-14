@@ -1,5 +1,5 @@
 body {
-        background: linear-gradient(rgba(100, 100, 100, 0.35), rgba(131, 131, 131, 0.35) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
+        background: linear-gradient(rgba(165, 165, 165, 0.6), rgba(192, 192, 192, 0.6) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
         background-position: center center;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -28,9 +28,9 @@ h1{
 
 .tagline{
     text-align: center;
-    font-family: 'Rock Salt', cursive;
+    font-family: 'Gaegu', cursive;
     margin-top: 65px;
-    font-size: 20px;
+    font-size: 40px;
 }
 .tagline2{
     text-align: center;
@@ -63,23 +63,92 @@ input{
     font-size: 15px;
     border: 3px solid black;
     padding-left: 5px;
+    outline: none;
 }
+
+input::-webkit-input-placeholder {
+    font-family: 'Gaegu', cursive;
+    font-size: 20px;
+  }
+  
+input:-ms-input-placeholder {
+    font-family: 'Gaegu', cursive;
+    font-size: 20px;
+  }
+  
+input:-moz-placeholder {
+    font-family: 'Gaegu', cursive;
+    font-size: 20px;
+  }
+  
+input::-moz-placeholder {
+    font-family: 'Gaegu', cursive;
+    font-size: 20px;
+  }
 
 input:-webkit-autofill{
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
+
+button {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+  }
 
 button{
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    font-size: 25px;
+    /*
     font-weight: bolder;
     border-radius: 50%;
-    font-family: 'Rock Salt', cursive;
     border: 3px solid black;
+    outline: none; */
+    position: relative;
+    padding: 10px 23px;
+    top: 0;
+    font-size: 30px;
+    font-family: 'Gaegu', cursive;
+    font-weight: 900;
+    border: 3px solid black;
+    border-radius: 50%;
+    /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
+    background: #1AAB8A;
+    color: black;
+    box-shadow: 0px 0px 0px rgba(230, 142, 211, 0.1);
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.2s ease;
+       -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+            transition: all 0.2s ease;
 }
+
+button:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    
+    -webkit-transform: rotateX(22deg);
+       -moz-transform: rotateX(22deg);
+        -ms-transform: rotateX(22deg);
+            transform: rotateX(22deg);
+  }
+
+  button:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
+    background: rgba( 20, 224, 133, 1 );
+  }
+  
 
 #api-data{
     box-sizing: border-box;
@@ -101,11 +170,13 @@ button{
     padding: 10px; 
     font-family: 'Gaegu', cursive;
     font-size: 20px;
-    font-style: bold;
+    font-weight: bold;
 }
 
 .event-link{
     font-family: 'Rock Salt', cursive;
+    text-decoration: none;
+    font-size: 15px;
 }
 
 .event-pic{
@@ -140,7 +211,7 @@ button{
     border-radius: 10px;
     overflow: auto;
     color:black;
-    background: linear-gradient(rgba(248, 248, 248, 0.75), rgba(253, 253, 253, 0.75) ), url(https://i.pinimg.com/originals/a3/85/b4/a385b40167fc24d3cafcc334fc871b47.jpg);
+    background: linear-gradient(rgba(248, 248, 248, 0.79), rgba(253, 253, 253, 0.79) ), url(https://i.pinimg.com/originals/a3/85/b4/a385b40167fc24d3cafcc334fc871b47.jpg);
     background-position: center center;
     /* background-attachment: fixed; */
     background-repeat: no-repeat;
@@ -159,6 +230,20 @@ button{
     border: 3px solid black;
     float: right;
     border-radius: 10px;
+}
+
+.marker-title{
+    font-weight: 900; 
+    font-family: 'Gaegu', cursive;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.marker-link{
+    font-weight: bolder; 
+    font-family: 'Rock Salt', cursive;
+    font-size: 12px;
+    text-decoration: none;
 }
 
 .hidden-element#events,.hidden-element#map{

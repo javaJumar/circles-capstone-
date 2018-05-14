@@ -23,7 +23,9 @@ function getEvents(interest, zipCode) {
         centerMap(+newLat, +newLng);
         $('#events').html(eventTemplate);
         events.map(event =>
-            createMarker(+event.venue.latitude, +event.venue.longitude))
+            createMarker(+event.venue.latitude, +event.venue.longitude, event.url, event.name.text));
+        // events.map(event =>
+        //     markerInfo(event));
     }).fail(error => {
         console.log(error)
     })
@@ -44,14 +46,31 @@ function createEventTemplate(event) {
             <p class ='event-heading'>${event.name.text}:</p> 
             <p class='times'>${newStartTime} to ${newEndTime}</p>
             <p class='event-description'>${event.description.text}:
-            <a class='event-link' href='${eventLink}?token=4CMGDQLH3H24Q4O62ZR7'>Event Link!</a></p>
+            <a class='event-link' href='${eventLink}?token=4CMGDQLH3H24Q4O62ZR7' target="_blank">Event Link!</a></p>
             </div>`;
     return content;
 }
 
-function createMarker(lat, lng) {
-    var marker = new google.maps.Marker({
-        position: { lat, lng }, map
+
+function createMarker(lat, lng, url, title) {
+    let marker = new google.maps.Marker({
+        position: { lat, lng }, map,
+        url: url
+    });
+    const infowindow = new google.maps.InfoWindow({
+        content: `<div class = 'marker-info'>
+        <p class='marker-title'>"${title}"</p>
+        <a class='marker-link' href='${url}' target="_blank">Here's a link to the event!<a/>
+        </div>`,
+        maxWidth: 100
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(map, marker);
+        console.log('marker');
+        setTimeout(function () { infowindow.close(); }, 6000);
+    });
+    google.maps.event.addListener(map, 'click', function () {
+        infowindow.close();
     });
 }
 

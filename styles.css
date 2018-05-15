@@ -1,5 +1,5 @@
 body {
-        background: linear-gradient(rgba(165, 165, 165, 0.6), rgba(192, 192, 192, 0.6) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
+        background: linear-gradient(rgba(165, 165, 165, 0.72), rgba(192, 192, 192, 0.72) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
         background-position: center center;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -17,8 +17,9 @@ header{
 
 h1{
     text-align: center;
-    font-size: 50px;
-    font-family: 'Rock Salt', cursive;
+    font-size: 40px;
+    font-weight: 900;
+    font-family: 'Rock Salt', cursive; 
     margin-top: 0;
 }
 .logo{
@@ -28,20 +29,19 @@ h1{
 
 .tagline{
     text-align: center;
-    font-family: 'Gaegu', cursive;
+    font-family: 'Noto Sans', sans-serif;
     margin-top: 65px;
-    font-size: 40px;
+    font-size: 30px;
 }
 .tagline2{
     text-align: center;
-    font-family: 'Gaegu', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 30px;
     margin-top: -40px;
 }
 
 form {
     text-align: center;
-    margin-top: 40px;
 }
 
 .first-input{
@@ -53,36 +53,42 @@ form {
 }
 
 label{
-    font-family: 'Gaegu', cursive;
-    font-weight: bolder;
-    font-size: 28px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    font-size: 25px;
 }
 
 input{
     border-radius: 10px;
     font-size: 15px;
     border: 3px solid black;
-    padding-left: 5px;
+    padding: 5px; 
     outline: none;
 }
 
+input[type="text"]
+{
+    font-size:20px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
 input::-webkit-input-placeholder {
-    font-family: 'Gaegu', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
   }
   
 input:-ms-input-placeholder {
-    font-family: 'Gaegu', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
   }
   
 input:-moz-placeholder {
-    font-family: 'Gaegu', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
   }
   
 input::-moz-placeholder {
-    font-family: 'Gaegu', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
   }
 
@@ -105,48 +111,48 @@ button{
     margin-right: auto;
     margin-top: 30px;
     /*
-    font-weight: bolder;
+    font-weight: 900;
     border-radius: 50%;
     border: 3px solid black;
     outline: none; */
     position: relative;
-    padding: 10px 23px;
+    padding: 5px 20px;
     top: 0;
     font-size: 30px;
-    font-family: 'Gaegu', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 900;
     border: 3px solid black;
-    border-radius: 50%;
+    border-radius: 10px;
     /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
-    background: #1AAB8A;
+    background: rgb(162, 202, 228);
     color: black;
-    box-shadow: 0px 0px 0px rgba(230, 142, 211, 0.1);
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
     
     -webkit-transform: translateZ(0);
        -moz-transform: translateZ(0);
         -ms-transform: translateZ(0);
             transform: translateZ(0);
     
-    -webkit-transition: all 0.2s ease;
-       -moz-transition: all 0.2s ease;
-        -ms-transition: all 0.2s ease;
-            transition: all 0.2s ease;
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+            transition: all 0.5s ease;
 }
 
 button:hover {
     top: -10px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
     
-    -webkit-transform: rotateX(22deg);
-       -moz-transform: rotateX(22deg);
-        -ms-transform: rotateX(22deg);
-            transform: rotateX(22deg);
+    -webkit-transform: rotateX(12deg);
+       -moz-transform: rotateX(12deg);
+        -ms-transform: rotateX(12deg);
+            transform: rotateX(12deg);
   }
 
   button:active {
     top: 0px;
-    box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
-    background: rgba( 20, 224, 133, 1 );
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0);
+    /* background: rgba( 20, 224, 133, 1 ); */
   }
   
 
@@ -160,21 +166,21 @@ button:hover {
 }
 
 .event-heading{
-    font-weight: bolder;
+    font-weight: 900;
     text-transform: uppercase;
-    font-family: 'Gaegu', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
 }
 
 .event-description{
     padding: 10px; 
-    font-family: 'Gaegu', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
     font-weight: bold;
 }
 
 .event-link{
-    font-family: 'Rock Salt', cursive;
+    font-family: 'Noto Sans', sans-serif;
     text-decoration: none;
     font-size: 15px;
 }
@@ -190,14 +196,14 @@ button:hover {
 .times{
     font-weight: 600;
     font-style: italic;
-    font-family: 'Gaegu', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
 }
 
 .no-event{
     text-align: center;
     font-size: 50px;
-    font-family: 'Rock Salt', cursive;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 #events{
@@ -234,14 +240,14 @@ button:hover {
 
 .marker-title{
     font-weight: 900; 
-    font-family: 'Gaegu', cursive;
+    font-family: 'Noto Sans', sans-serif;
     text-transform: uppercase;
     font-size: 14px;
 }
 
 .marker-link{
-    font-weight: bolder; 
-    font-family: 'Rock Salt', cursive;
+    font-weight: 900; 
+    font-family: 'Noto Sans', sans-serif;
     font-size: 12px;
     text-decoration: none;
 }
@@ -252,13 +258,17 @@ button:hover {
 
 @media only screen and (max-device-width : 960px) and (min-device-width : 320px){
 
-    header{
+header{
         width: 100%;
     }
 .meetup-data, .maps-data {
     width: 100%;
     }
-h1, h2 {
+h1 {
     width: 100%;
+    }   
+h2.tagline {
+    width: 100%;
+    margin-top: 110px; 
     }   
 }

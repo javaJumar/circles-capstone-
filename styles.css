@@ -1,5 +1,8 @@
+*{
+  box-sizing: border-box;
+}
 body {
-        background: linear-gradient(rgba(165, 165, 165, 0.72), rgba(192, 192, 192, 0.72) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
+        background: linear-gradient(rgba(165, 165, 165, 0.45), rgba(192, 192, 192, 0.45) ), url(https://www.blog.tirol/wp-content/uploads/2015/04/Hipster-Wanderer.jpg);
         background-position: center center;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -7,6 +10,7 @@ body {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover; 
+        margin: 0;
     }
 
 header{
@@ -23,14 +27,14 @@ h1{
     margin-top: 0;
 }
 .logo{
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
 }
 
 .tagline{
     text-align: center;
     font-family: 'Noto Sans', sans-serif;
-    margin-top: 65px;
+    margin-top: 130px;
     font-size: 30px;
 }
 .tagline2{
@@ -45,17 +49,18 @@ form {
 }
 
 .first-input{
-    display: inline-block;
+    display: block;
 }
 
 .second-input{
-    display: inline-block;
+    display: block;
+    margin-top: 20px;
 }
 
 label{
     font-family: 'Noto Sans', sans-serif;
     font-weight: 900;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 input{
@@ -152,7 +157,7 @@ button:hover {
   button:active {
     top: 0px;
     box-shadow: 0px 0px 0px rgba(248, 248, 248, 0);
-    /* background: rgba( 20, 224, 133, 1 ); */
+    background: rgb(216, 136, 125);
   }
   
 
@@ -165,25 +170,81 @@ button:hover {
     margin: 10px:
 }
 
+/* #search-bar{
+    position: relative; 
+    height: 20px;
+    width: 100%;
+    background-color: white;
+} */
+
+h3{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    font-family: 'Rock Salt', cursive; 
+    margin-top: 50%;
+}
+
 .event-heading{
     font-weight: 900;
     text-transform: uppercase;
     font-family: 'Noto Sans', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
+    margin-top: 20px;
 }
 
 .event-description{
     padding: 10px; 
     font-family: 'Noto Sans', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .event-link{
     font-family: 'Noto Sans', sans-serif;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
+    float: left;
+    clear: right;
+    color: black;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    font-weight: 900;
+    border: 3px solid black;
+    border-radius: 10px;
+    /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
+    background: rgb(162, 202, 228);
+    color: black;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+            transition: all 0.5s ease;
 }
+
+.event-link:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    
+    -webkit-transform: rotateX(12deg);
+       -moz-transform: rotateX(12deg);
+        -ms-transform: rotateX(12deg);
+            transform: rotateX(12deg);
+  }
+
+  .event-link:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0);
+    background: rgb(223, 151, 142);
+  }
 
 .event-pic{
     height: 100px;
@@ -191,13 +252,14 @@ button:hover {
     border-radius: 10px;
     float: left;
     padding: 5px;
+    margin-top: 10px;
 }
 
 .times{
     font-weight: 600;
     font-style: italic;
     font-family: 'Noto Sans', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .no-event{
@@ -207,14 +269,15 @@ button:hover {
 }
 
 #events{
-    height: 500px;
-    width: 49%;
-    display:inline-block;
-    margin-top: 100px;
-    margin-bottom: 20px;
-    border: 3px solid black;
+    height: 800px;
+    width: 30%;
+    /* display:inline-block; */
+    padding: 15px;
+    /* margin-top: 100px;
+    margin-bottom: 20px; */
+    /* border: 3px solid black; */
     float: left;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     overflow: auto;
     color:black;
     background: linear-gradient(rgba(248, 248, 248, 0.79), rgba(253, 253, 253, 0.79) ), url(https://i.pinimg.com/originals/a3/85/b4/a385b40167fc24d3cafcc334fc871b47.jpg);
@@ -228,14 +291,14 @@ button:hover {
 }
 
 #map{
-    height: 500px;
-    width: 49%;
-    display:inline-block;
-    margin-top: 100px;
-    margin-bottom: 20px;
-    border: 3px solid black;
+    height: 800px;
+    width: 70%;
+    /* display:inline-block; */
+    /* margin-top: 100px;
+    margin-bottom: 20px; */
+    /* border: 3px solid black; */
     float: right;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .marker-title{
@@ -252,9 +315,107 @@ button:hover {
     text-decoration: none;
 }
 
-.hidden-element#events,.hidden-element#map{
+.hidden-element,.hidden-element{
     display: none; 
 }
+
+.back-button{
+    /* display: none; */
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    border: 3px solid black;
+    border-radius: 10px;
+    /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
+    background: rgb(162, 202, 228);
+    color: black;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+}
+
+.back-button:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    
+    -webkit-transform: rotateX(12deg);
+       -moz-transform: rotateX(12deg);
+        -ms-transform: rotateX(12deg);
+            transform: rotateX(12deg);
+  }
+
+  .back-button:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0);
+    background: rgb(228, 150, 147);
+  }
+
+ #home-screen{
+    /* display: none; */
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 15px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    border: 3px solid black;
+    border-radius: 10px;
+    /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
+    background: rgb(162, 202, 228);
+    color: black;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
+    
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+}
+
+#home-screen:hover {
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    
+    -webkit-transform: rotateX(12deg);
+       -moz-transform: rotateX(12deg);
+        -ms-transform: rotateX(12deg);
+            transform: rotateX(12deg);
+  }
+
+  #home-screen:active {
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba(248, 248, 248, 0);
+    background: rgb(228, 150, 147);
+  }
+
+  #back{
+      display: none;
+  }
+
+  .hide-element{
+      display: none;
+  }
 
 @media only screen and (max-device-width : 960px) and (min-device-width : 320px){
 
@@ -269,6 +430,19 @@ h1 {
     }   
 h2.tagline {
     width: 100%;
-    margin-top: 110px; 
+    margin-top: 130px; 
     }   
+.event-container {
+    display: none;
+    width: 100%;
+    }
+
+#events, #map{
+    width: 100%;
+    top: 0;
+    right: 0; 
+    position: absolute; 
+    /* display: block;  */
+    }
+
 }

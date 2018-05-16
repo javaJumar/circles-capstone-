@@ -16,16 +16,14 @@ function getEvents(interest, zipCode) {
     $.get(options).done(response => {
         console.log(response);
         const events = response.events;
-        const eventTemplate = (events.length) ? events.map(event =>
-            createEventTemplate(event)) : `<p class='no-event'>Sorry, no results within your area!</p>`;
         const newLat = response.location.latitude;
         const newLng = response.location.longitude;
         centerMap(+newLat, +newLng);
-        $('#events').html(eventTemplate);
-        events.map(event =>
-            createMarker(+event.venue.latitude, +event.venue.longitude, event.url, event.name.text));
-        // events.map(event =>
-        //     markerInfo(event));
+        const infowindow = new google.maps.InfoWindow({ maxWidth: 130 });
+        events.map(event => {
+            const eventTemplate = createEventTemplate(event);
+            createMarker(event, infowindow);
+        })
     }).fail(error => {
         console.log(error)
     })
@@ -42,49 +40,78 @@ function createEventTemplate(event) {
     const logoUrl = event.logo ? event.logo.original.url : '';
     const logo = event.logo ? `<img class='event-pic' src='${logoUrl}' alt='event photo'>` : '';
     const content = `<div class='event-container'>
-            ${logo}
+            <a id='home-screen' href='index.html'>Home Screen</a>
+            <div>${logo}</div>
             <p class ='event-heading'>${event.name.text}:</p> 
             <p class='times'>${newStartTime} to ${newEndTime}</p>
             <p class='event-description'>${event.description.text}:
-            <a class='event-link' href='${eventLink}?token=4CMGDQLH3H24Q4O62ZR7' target="_blank">Event Link!</a></p>
+            <a class='event-link' href='${eventLink}?token=4CMGDQLH3H24Q4O62ZR7' target="_blank">Event Link</a></p>
             </div>`;
     return content;
 }
 
 
-function createMarker(lat, lng, url, title) {
+function createMarker(event, infowindow) {
+    const { venue, url, name } = event;
+    console.log(name);
+    const { latitude, longitude } = venue;
+    const position = { lat: +latitude, lng: +longitude }
+    console.log(position);
+    const template = createEventTemplate(event);
     let marker = new google.maps.Marker({
-        position: { lat, lng }, map,
-        url: url
+        position,
+        url,
+        map
     });
-    const infowindow = new google.maps.InfoWindow({
-        content: `<div class = 'marker-info'>
-        <p class='marker-title'>"${title}"</p>
-        <a class='marker-link' href='${url}' target="_blank">Here's a link to the event!<a/>
-        </div>`,
-        maxWidth: 100
-    });
+    const content = `<div class = 'marker-info'>
+    <p class='marker-title'>"${name.text}"</p>
+    <a class='marker-link' href='${url}' target="_blank">Here's a link to the event!<a/>
+    </div>`
+    // infowindow.setContent(content);
+    // openEvents();
+    if (isMobile()) {
+        closeEvents();
+    }
     google.maps.event.addListener(marker, 'click', function () {
         infowindow.open(map, marker);
+        infowindow.setContent(content);
+        // $('#events').show();
         console.log('marker');
-        setTimeout(function () { infowindow.close(); }, 6000);
+        $('#event-detail').html(template);
+        if (isMobile()) {
+            console.log('open events');
+            openEvents();
+        }
+        // setTimeout(function () { infowindow.close(); }, 6000);
     });
     google.maps.event.addListener(map, 'click', function () {
         infowindow.close();
     });
 }
 
-function getAddressCoords(address, coords) {
-    let geocoder = new google.maps.Geocoder();
-    geocoder.geocode({
-        address: address,
-    }, coords);
-    let coordinates = coords[0].geometry.location;
-    let marker = new google.maps.Marker({
-        map: coords,
-        position: coordinates
-    });
+function openEvents() {
+    $('#events').removeClass('hidden-element');
 }
+
+function closeEvents() {
+    $('#events').addClass('hidden-element');
+}
+
+function isMobile() {
+    return $(window).width() < 640;
+}
+
+// function getAddressCoords(address, coords) {
+//     let geocoder = new google.maps.Geocoder();
+//     geocoder.geocode({
+//         address: address,
+//     }, coords);
+//     let coordinates = coords[0].geometry.location;
+//     let marker = new google.maps.Marker({
+//         map: coords,
+//         position: coordinates
+//     });
+// }
 
 function centerMap(newLat, newLng) {
     var settings = {
@@ -108,19 +135,29 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), settings);
     let geocoder = new google.maps.Geocoder();
     document.getElementById('submit').addEventListener('click', function () {
-        // getAddressCoords(geocoder, map);
     });
 
     //this is to set the marker on the Map itself
     var marker = new google.maps.Marker({
         position: { lat: 33.745571, lng: -117.867836 },
-        //which Map do we want to add it to? 
         map: map
     });
 }
+
+function renderResults() {
+    $('header').remove();
+    $('.tagline').remove();
+    $('form').remove();
+    $('#map').show();
+    if (!isMobile) {
+        $('#events').show();
+    }
+}
+
 // //calling Init 
 function main() {
     onSubmit();
+    $('#back').click(closeEvents);
 }
 
 function onSubmit() {
@@ -131,7 +168,9 @@ function onSubmit() {
         const zipCode = $('#zipCode').val();
         $('form').find('#interest').val("");
         $('form').find('#zipCode').val("");
-        $('.hidden-element').show();
+        $('#events').removeClass('hidden-element');
+        $('#maps').removeClass('hidden-element');
+        renderResults();
         getEvents(interest, zipCode);
     })
 }

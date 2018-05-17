@@ -40,7 +40,7 @@ function createEventTemplate(event) {
     const logoUrl = event.logo ? event.logo.original.url : '';
     const logo = event.logo ? `<img class='event-pic' src='${logoUrl}' alt='event photo'>` : '';
     const content = `<div class='event-container'>
-            <a id='home-screen' href='index.html'>Home Screen</a>
+            <a id='home-screen' href='index.html'>Home/Search Again</a>
             <div>${logo}</div>
             <p class ='event-heading'>${event.name.text}:</p> 
             <p class='times'>${newStartTime} to ${newEndTime}</p>
@@ -49,7 +49,6 @@ function createEventTemplate(event) {
             </div>`;
     return content;
 }
-
 
 function createMarker(event, infowindow) {
     const { venue, url, name } = event;
@@ -81,6 +80,7 @@ function createMarker(event, infowindow) {
         if (isMobile()) {
             console.log('open events');
             openEvents();
+            $('#back').removeClass('back-button');
         }
         // setTimeout(function () { infowindow.close(); }, 6000);
     });
@@ -88,6 +88,7 @@ function createMarker(event, infowindow) {
         infowindow.close();
     });
 }
+
 
 function openEvents() {
     $('#events').removeClass('hidden-element');

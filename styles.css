@@ -129,7 +129,7 @@ button{
     border: 3px solid black;
     border-radius: 10px;
     /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
-    background: rgb(162, 202, 228);
+    background: rgb(171, 211, 191);
     color: black;
     box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
     
@@ -210,12 +210,12 @@ h3{
     border-radius: 20px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     font-weight: 900;
     border: 3px solid black;
     border-radius: 10px;
     /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
-    background: rgb(162, 202, 228);
+    background: rgb(171, 211, 191);
     color: black;
     box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
     
@@ -252,7 +252,7 @@ h3{
     border-radius: 10px;
     float: left;
     padding: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .times{
@@ -315,7 +315,7 @@ h3{
     text-decoration: none;
 }
 
-.hidden-element,.hidden-element{
+.hidden-element{
     display: none; 
 }
 
@@ -333,7 +333,7 @@ h3{
     border: 3px solid black;
     border-radius: 10px;
     /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
-    background: rgb(162, 202, 228);
+    background: rgb(171, 211, 191);
     color: black;
     box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
     
@@ -378,7 +378,7 @@ h3{
     border: 3px solid black;
     border-radius: 10px;
     /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
-    background: rgb(162, 202, 228);
+    background: rgb(171, 211, 191);
     color: black;
     box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
     
@@ -409,16 +409,15 @@ h3{
     background: rgb(228, 150, 147);
   }
 
-  #back{
+  .back-button{
       display: none;
   }
 
-  .hide-element{
+  /* .hide-element{
       display: none;
-  }
+  } */
 
 @media only screen and (max-device-width : 960px) and (min-device-width : 320px){
-
 header{
         width: 100%;
     }

@@ -5,7 +5,7 @@ let map;
 //get the list of events from Eventbrite API endpoint
 function getEvents(interest, zipCode) {
     const endpoint =
-        `${eventbriteUrl}/events/search/?q=${interest}&location.address=${zipCode}&location.within=5mi&expand=organizer,venue`;
+        `${eventbriteUrl}/events/search/?q=${interest}&location.address=${zipCode}&location.within=50mi&expand=organizer,venue`;
     const options = {
         url: endpoint,
         headers: {
@@ -75,15 +75,12 @@ function createMarker(event, infowindow) {
         <p class='marker-title'>"${name.text}"</p>
         <a class='marker-link' href='${url}' target="_blank">Here's a link to the event!<a />
     </div>`
-    // infowindow.setContent(content);
-    // openEvents();
     if (isMobile()) {
         closeEvents();
     }
     google.maps.event.addListener(marker, 'click', function () {
         infowindow.open(map, marker);
         infowindow.setContent(content);
-        // $('#events').show();
         console.log('marker');
         $('#event-detail').html(template);
         if (isMobile()) {
@@ -94,7 +91,6 @@ function createMarker(event, infowindow) {
                 closeEvents();
             })
         }
-        // setTimeout(function () { infowindow.close(); }, 6000);
     });
     google.maps.event.addListener(map, 'click', function () {
         infowindow.close();

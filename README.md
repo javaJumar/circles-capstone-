@@ -2,6 +2,8 @@ Out & About
 ===========
 An application designed to help people get off their couches, faces away from a screen, and find fun events in their local community.
 
+**Does this show up?**
+
 Motivation
 ----------
 The idea for the app dawned on me when I personally needed to search for events locally so my wife and I can find fun things to do. 

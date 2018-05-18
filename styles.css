@@ -120,11 +120,6 @@ button{
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    /*
-    font-weight: 900;
-    border-radius: 50%;
-    border: 3px solid black;
-    outline: none; */
     position: relative;
     padding: 5px 20px;
     top: 0;
@@ -133,7 +128,6 @@ button{
     font-weight: 900;
     border: 3px solid black;
     border-radius: 10px;
-    /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
     background: rgb(171, 211, 191);
     color: black;
     box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
@@ -174,13 +168,6 @@ button:hover {
 .event-container{
     margin: 10px:
 }
-
-/* #search-bar{
-    position: relative; 
-    height: 20px;
-    width: 100%;
-    background-color: white;
-} */
 
 h3{
     text-align: center;
@@ -227,7 +214,6 @@ h3{
     font-weight: 900;
     border: 3px solid black;
     border-radius: 10px;
-    /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
     background: rgb(171, 211, 191);
     color: black;
     box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
@@ -271,7 +257,6 @@ h3{
 
 .times{
     font-weight: 600;
-    /* font-style: italic; */
     font-family: 'Noto Sans', sans-serif;
     font-size: 15px;
     float: left;
@@ -288,18 +273,12 @@ h3{
     height: 100%;
     width: 30%;
     display: none;
-    /* display:inline-block; */
     padding: 15px;
-    /* margin-top: 100px;
-    margin-bottom: 20px; */
-    /* border: 3px solid black; */
     float: left;
-    /* border-radius: 10px; */
     overflow: auto;
     color:black;
     background: linear-gradient(rgba(248, 248, 248, 0.80), rgba(253, 253, 253, 0.80) ), url(https://i.pinimg.com/originals/a3/85/b4/a385b40167fc24d3cafcc334fc871b47.jpg);
     background-position: center center;
-    /* background-attachment: fixed; */
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -311,12 +290,7 @@ h3{
     height: 100%;
     width: 70%;
     display: none;
-    /* display:inline-block; */
-    /* margin-top: 100px;
-    margin-bottom: 20px; */
-    /* border: 3px solid black; */
     float: right;
-    /* border-radius: 10px; */
 }
 
 .marker-title{
@@ -334,7 +308,6 @@ h3{
 }
 
 .back-button{
-    /* display: none; */
     font-family: 'Noto Sans', sans-serif;
     text-decoration: none;
     font-size: 20px;
@@ -346,7 +319,6 @@ h3{
     font-weight: 900;
     border: 3px solid black;
     border-radius: 10px;
-    /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
     background: rgb(171, 211, 191);
     color: black;
     box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
@@ -379,10 +351,8 @@ h3{
   }
 
  #home-screen{
-    /* display: none; */
     font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
-    /* float: left; */
     clear: both;
     text-decoration: none;
     background-color: white;
@@ -394,7 +364,6 @@ h3{
     font-weight: 900;
     border: 3px solid black;
     border-radius: 10px;
-    /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
     background: rgb(171, 211, 191);
     color: black;
     box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
@@ -427,21 +396,18 @@ h3{
   }
 
   #back-to-map{
-    /* display: none; */
     font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
-    /* float: left; */
     clear: right;
     text-decoration: none;
     background-color: white;
-    padding-left: 10px;
+    padding-left: 10px;p
     padding-right: 10px;
     margin-top: 15px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 900;
     border: 3px solid black;
     border-radius: 10px;
-    /* border-bottom: 1px solid rgba(241, 161, 217, 0.5); */
     background: rgb(171, 211, 191);
     color: black;
     box-shadow: 0px 0px 0px rgba(248, 248, 248, 0.1);
@@ -478,10 +444,6 @@ h3{
       display: none;
   }
 
-  /* .hide-element{
-      display: none;
-  } */
-
 @media only screen and (max-width : 960px) and (min-width : 320px){
 header{
         width: 100%;
@@ -506,7 +468,6 @@ h2.tagline {
     top: 0;
     right: 0; 
     position: absolute; 
-    /* display: block;  */
     }
 
 }

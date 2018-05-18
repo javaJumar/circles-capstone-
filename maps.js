@@ -39,14 +39,15 @@ function createEventTemplate(event) {
     const eventLink = event.url;
     const logoUrl = event.logo ? event.logo.original.url : '';
     const logo = event.logo ? `<img class='event-pic' src='${logoUrl}' alt='event photo'>` : '';
-    const content = `<div class='event-container'>
+    const content = event ? `<div class='event-container'>
             <a id='home-screen' href='index.html'>Home/Search Again</a>
+            <a action="action" onclick="window.history.go(-1); return false;" type="button" value="Back" id='back-to-map' class='back-button'>Back to Map Results</a>
             <div>${logo}</div>
             <p class ='event-heading'>${event.name.text}:</p> 
             <p class='times'>${newStartTime} to ${newEndTime}</p>
             <p class='event-description'>${event.description.text}:
             <a class='event-link' href='${eventLink}?token=4CMGDQLH3H24Q4O62ZR7' target="_blank">Event Link</a></p>
-            </div>`;
+            </div>` : `<h4>Sorry, no events fit your criteria. Do try again.</h4>`;
     return content;
 }
 
@@ -62,9 +63,9 @@ function createMarker(event, infowindow) {
         url,
         map
     });
-    const content = `<div class = 'marker-info'>
-    <p class='marker-title'>"${name.text}"</p>
-    <a class='marker-link' href='${url}' target="_blank">Here's a link to the event!<a/>
+    const content = `<div class = 'marker-info >
+        <p class='marker-title'>"${name.text}"</p>
+        <a class='marker-link' href='${url}' target="_blank">Here's a link to the event!<a />
     </div>`
     // infowindow.setContent(content);
     // openEvents();
@@ -80,7 +81,10 @@ function createMarker(event, infowindow) {
         if (isMobile()) {
             console.log('open events');
             openEvents();
-            $('#back').removeClass('back-button');
+            $('#back-to-map').click(function () {
+                console.log('click');
+                closeEvents();
+            })
         }
         // setTimeout(function () { infowindow.close(); }, 6000);
     });
@@ -92,6 +96,7 @@ function createMarker(event, infowindow) {
 
 function openEvents() {
     $('#events').removeClass('hidden-element');
+    $('#back-to-map').removeClass('back-button');
 }
 
 function closeEvents() {
@@ -101,18 +106,6 @@ function closeEvents() {
 function isMobile() {
     return $(window).width() < 640;
 }
-
-// function getAddressCoords(address, coords) {
-//     let geocoder = new google.maps.Geocoder();
-//     geocoder.geocode({
-//         address: address,
-//     }, coords);
-//     let coordinates = coords[0].geometry.location;
-//     let marker = new google.maps.Marker({
-//         map: coords,
-//         position: coordinates
-//     });
-// }
 
 function centerMap(newLat, newLng) {
     var settings = {

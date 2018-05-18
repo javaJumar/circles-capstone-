@@ -47,7 +47,7 @@ function createEventTemplate(event) {
             <p class='times'>${newStartTime} to ${newEndTime}</p>
             <p class='event-description'>${event.description.text}:
             <a class='event-link' href='${eventLink}?token=4CMGDQLH3H24Q4O62ZR7' target="_blank">Event Link</a></p>
-            </div>` : `<h4>Sorry, no events fit your criteria. Do try again.</h4>`;
+            </div>` : `<h4>Sorry, no events fit your criteria, please try again!</h4>`;
     return content;
 }
 

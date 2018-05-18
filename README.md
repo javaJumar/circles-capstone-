@@ -10,7 +10,7 @@ Screenshots
 ----------
 Login Screen/Landing Page:
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Out & About Landing Page](/out-about-capstone/Out&About Landing Page.png?raw=true)
 
 Give examples
 Installing

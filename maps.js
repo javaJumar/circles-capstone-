@@ -20,8 +20,16 @@ function getEvents(interest, zipCode) {
         const newLng = response.location.longitude;
         centerMap(+newLat, +newLng);
         const infowindow = new google.maps.InfoWindow({ maxWidth: 130 });
+        if (events.length === 0) {
+            $('.no-event').show();
+        } else {
+            events.map(event => {
+                createMarker(event, infowindow);
+            })
+            $('.click-event').show();
+            $('#events').show();
+        }
         events.map(event => {
-            const eventTemplate = createEventTemplate(event);
             createMarker(event, infowindow);
         })
     }).fail(error => {
@@ -39,7 +47,7 @@ function createEventTemplate(event) {
     const eventLink = event.url;
     const logoUrl = event.logo ? event.logo.original.url : '';
     const logo = event.logo ? `<img class='event-pic' src='${logoUrl}' alt='event photo'>` : '';
-    const content = event ? `<div class='event-container'>
+    const content = `<div class='event-container'>
             <a id='home-screen' href='index.html'>Home/Search Again</a>
             <a action="action" onclick="window.history.go(-1); return false;" type="button" value="Back" id='back-to-map' class='back-button'>Back to Map Results</a>
             <div>${logo}</div>
@@ -47,7 +55,7 @@ function createEventTemplate(event) {
             <p class='times'>${newStartTime} to ${newEndTime}</p>
             <p class='event-description'>${event.description.text}:
             <a class='event-link' href='${eventLink}?token=4CMGDQLH3H24Q4O62ZR7' target="_blank">Event Link</a></p>
-            </div>` : `<h4>Sorry, no events fit your criteria, please try again!</h4>`;
+            </div>`;
     return content;
 }
 
@@ -95,16 +103,16 @@ function createMarker(event, infowindow) {
 
 
 function openEvents() {
-    $('#events').removeClass('hidden-element');
+    $('#events').show();
     $('#back-to-map').removeClass('back-button');
 }
 
 function closeEvents() {
-    $('#events').addClass('hidden-element');
+    $('#events').hide();
 }
 
 function isMobile() {
-    return $(window).width() < 640;
+    return $(window).width() < 960;
 }
 
 function centerMap(newLat, newLng) {

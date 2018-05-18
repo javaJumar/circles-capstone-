@@ -12,7 +12,7 @@ Screenshots
 ----------
 Login Screen/Landing Page:
 
-![Out & About Landing Page](/out-about-capstone/Out&About Landing Page.png?raw=true)
+![Out & About Landing Page](https://github.com/javaJumar/out-about-capstone/blob/master/Out%26About%20Landing%20Page.png)
 
 Give examples
 Installing

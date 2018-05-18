@@ -1,11 +1,16 @@
-Project Title
-One Paragraph of project description goes here
+Out & About 
+===========
+An application designed to help people get off their couches, faces away from a screen, and find fun events in their local community.
 
-Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Motivation
+----------
+The idea for the app dawned on me when I personally needed to search for events locally so my wife and I can find fun things to do. 
 
-Prerequisites
-What things you need to install the software and how to install them
+Screenshots
+----------
+Login Screen/Landing Page:
+
+![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
 
 Give examples
 Installing
@@ -34,6 +39,7 @@ Deployment
 Add additional notes about how to deploy this on a live system
 
 Built With
-Dropwizard - The web framework used
-Maven - Dependency Management
-ROME - Used to generate RSS Feeds
+HTML
+CSS
+JavaScript
+jQuery

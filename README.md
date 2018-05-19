@@ -14,13 +14,13 @@ Login Screen/Landing Page:
 
 About:
 ------
-Type in any interest, and put in your zip code. The app will search for all related events within a 50 mile radius. Click on the Google Maps markers for more information related to that event. The app is designed to be very intuitive!
+Type in any interest, and put in your zip code. The app will search for all related events within a 50 mile radius. Click on the Google Maps markers for more information related to that event. The app is designed to be very intuitive. 
 
 ![Out & About Search Results](https://github.com/javaJumar/out-about-capstone/blob/master/Search%20Results.png)
 
 Features
 --------
-In a screen dominated world where most of our interactions happen on a computer or a smart phone, this app was inspired with a purpose of helping people get out and enjoy local events and build relationships! 
+In a screen dominated world where most of our interactions happen on a computer or a smart phone, this app was inspired with a purpose of helping people get out and enjoy local events and hopefully build relationships! 
 
 Demo:
 -----

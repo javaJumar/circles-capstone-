@@ -20,8 +20,11 @@ function getEvents(interest, zipCode) {
         const newLng = response.location.longitude;
         centerMap(+newLat, +newLng);
         const infowindow = new google.maps.InfoWindow({ maxWidth: 130 });
+        //there are no returned results, this page will show
         if (events.length === 0) {
+            $('#events').show();
             $('.no-event').show();
+            //if there are results, google markers will show where the event will take place
         } else {
             events.map(event => {
                 createMarker(event, infowindow);
@@ -37,7 +40,7 @@ function getEvents(interest, zipCode) {
     })
 }
 
-//this creates the event information in the left container
+//this creates the event information in the events container
 function createEventTemplate(event) {
     console.log(event);
     const startTime = event.start.local;
@@ -48,8 +51,8 @@ function createEventTemplate(event) {
     const logoUrl = event.logo ? event.logo.original.url : '';
     const logo = event.logo ? `<img class='event-pic' src='${logoUrl}' alt='event photo'>` : '';
     const content = `<div class='event-container'>
-            <a id='home-screen' href='index.html'>Home/Search Again</a>
-            <a action="action" onclick="window.history.go(-1); return false;" type="button" value="Back" id='back-to-map' class='back-button'>Back to Map Results</a>
+            <a id='home-screen' href='index.html'>Home/Search Again</a><br>
+            <p action="action" onclick="window.history.go(-1); return false;" type="button" value="Back" id='back-to-map' class='back-button'>Back to Map Results</p><br>
             <div>${logo}</div>
             <p class ='event-heading'>${event.name.text}:</p> 
             <p class='times'>${newStartTime} to ${newEndTime}</p>
@@ -59,6 +62,7 @@ function createEventTemplate(event) {
     return content;
 }
 
+//this creates the google maps markers using the eventbrite API data 
 function createMarker(event, infowindow) {
     const { venue, url, name } = event;
     console.log(name);

@@ -1,12 +1,10 @@
 Out & About 
 ===========
-An application designed to help people get off their couches, faces away from a screen, and find fun events in their local community.
-
-**Does this show up?????**
+An application designed to help people be 'out and about', possibly keep faces away from a screen, and find fun events in their local community.
 
 Motivation
 ----------
-The idea for the app dawned on me when I personally needed to search for events locally so my wife and I can find fun things to do. 
+The idea for the app dawned on me when I personally needed to search for events locally so my wife and I can find new and fun things to do.
 
 Screenshots
 ----------
@@ -14,14 +12,17 @@ Login Screen/Landing Page:
 
 ![Out & About Landing Page](https://github.com/javaJumar/out-about-capstone/blob/master/Out%26About%20Landing%20Page.png)
 
-Give examples
-Installing
-A step by step series of examples that tell you have to get a development env running
+About:
+------
+Type in any interest, and put in your zip code. The app will search for all related events within a 50 mile radius. Click on the Google Maps markers for more information related to that event. The app is designed to be very intuitive!
 
-Say what the step will be
+Features
+--------
+In a screen dominated world where most of our interactions happen on a computer or a smart phone, this app was inspired with a purpose of helping people get out and enjoy local events and build relationships! 
 
-Give the example
-And repeat
+Demo:
+-----
+https://javajumar.github.io./
 
 until finished
 End with an example of getting some data out of the system or using it for a little demo
@@ -29,12 +30,6 @@ End with an example of getting some data out of the system or using it for a lit
 Running the tests
 Explain how to run the automated tests for this system
 
-Break down into end to end tests
-Explain what these tests test and why
-
-Give an example
-And coding style tests
-Explain what these tests test and why
 
 Give an example
 Deployment

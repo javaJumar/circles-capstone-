@@ -14,7 +14,7 @@ Login Screen/Landing Page:
 
 About:
 ------
-Type in any interest, and put in your zip code. The app will search for all related events within a 50 mile radius. Click on the Google Maps markers for more information related to that event. The app is designed to be very intuitive. 
+Type in any interest, and put in your zip code. The app will search for all related events within a 30 mile radius. Click on the Google Maps markers for more information related to that event. The app is designed to be very intuitive. 
 
 ![Out & About Search Results](https://github.com/javaJumar/out-about-capstone/blob/master/Search%20Results.png)
 

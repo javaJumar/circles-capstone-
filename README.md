@@ -38,7 +38,3 @@ jQuery
 Authors
 -------
 Chong Patterson - Creator 
-
-Acknowledgements
-----------------
-Michael Sharpe - Thinkful Mentor, Esoteric Software Engineer

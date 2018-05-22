@@ -39,4 +39,4 @@ Chong Patterson - Creator
 
 Acknowledgements
 ----------------
-Michael Sharpe - Thinkful Mentor, Esoteric Guru, Software Engineer
+Michael Sharpe - Thinkful Mentor, Esoteric Software Engineer

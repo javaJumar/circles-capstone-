@@ -1,6 +1,6 @@
 Out & About 
 ===========
-An application designed to help people be 'out and about', possibly keep faces away from a screen, and find fun events in their local community.
+An application designed to help people be 'out and about', possibly keep faces away from a screen, and find fun events in their local community. Works on mobile and desktop. 
 
 Motivation
 ----------
